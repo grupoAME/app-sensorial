@@ -5,6 +5,7 @@ $("#bt-start").click(function(){
 actual_image = 1;
 modal_active = false;
 questions_json = null;
+is_full = false;
 
 $("#btn-next").click(function(){
     if(modal_active)
@@ -40,6 +41,20 @@ $("#btn-confirm-question").click(function(){
     $("#modal-question").hide();
     modal_active = false;
     
+});
+
+
+
+$("#main-image").dblclick(function(){
+    if(!is_full){
+        is_full = true;
+        $("#main-image").addClass("full-image");
+        $("#container-image").addClass("full-image");
+    }else{
+        is_full = false;
+        $("#main-image").removeClass("full-image");
+        $("#container-image").removeClass("full-image");
+    }
 });
 
 function update_question(){
