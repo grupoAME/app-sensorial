@@ -1,0 +1,144 @@
+<html class="h-full bg-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/tailwindconf.js"></script> 
+    <style>
+        .body{
+            position: float;
+        }
+        .container-btn-nav{
+            background-color: #fff;
+            width: 20%;
+            height: 100%; 
+            float: left;
+        }
+
+        .container-image{
+            background-color: #fff;
+            width: 60%;
+            height: 100%;
+            float: left;
+        }
+        .container-image img{
+            margin: auto;
+            margin-top: 10px;
+           height: calc(100% - 20px);
+        }
+
+        .container-question{
+            width: 100%;
+            background-color: #fff;
+            position: fixed;
+            bottom: 0px;
+            height: 150px;
+        }
+        .btn{
+            border:  2px solid #060689;
+            color: #060689;
+            border-radius: 10px;
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+           
+        }
+
+        .mini-btn{
+            border:  2px solid #060689;
+            background-color:#060689;
+            color: #fff;
+            border-radius: 10px;
+            padding: 3px;
+            width: 100px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 15px;
+           
+        }
+
+        .container-btn-nav .btn{
+            
+            margin-top: 40%;
+        }
+        
+        #modal-question{
+            width: 60%;
+            min-height: 30%;
+            margin-left: calc(20%);
+            border: 2px solid #3a218d;
+            background-color: #fff;
+            position: fixed;
+            margin-top: 10%;
+            border-radius: 10px;
+            padding: 20px;
+            display: none;
+            font-size: 20px;
+        }
+        #text-question{
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .options-question{
+
+        }
+
+        #view-question{
+            font-size: xx-large;
+            position: fixed;
+            top: 15px;
+            left: calc(50% - 25px);
+            opacity: 0.7;
+            color:#fff;
+            border: 2px solid #959595;
+            border-radius: 50%;
+        }
+        .view-question:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div id="modal-question">
+        <div id="text-question">...</div>
+        <div class="options-question">
+            <input id="inp-alt-1" type="radio" id="html" name="fav_language" value="1">
+            <label id="text-alt-1" for="inp-alt-1">Sim</label><br>
+            <input id="inp-alt-2" type="radio" id="css" name="fav_language" value="2">
+            <label id="text-alt-1" for="inp-alt-2">Não</label><br>
+            <input id="inp-alt-3" type="radio"  name="fav_language" value="3">
+            <label id="text-alt-3" for="inp-alt-3">Não Respondeu</label>
+            <div id='btn-confirm-question' class="mini-btn">
+                Ok
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container-btn-nav">
+            <div id="btn-back" class="btn">
+                Voltar
+            </div>
+        </div>
+        <div class="container-image">
+            <div id="view-question">
+                <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+            </div>
+            <img id="main-image" src="images/imagem1.png">
+        </div>
+        <div class="container-btn-nav">
+            <div id="btn-next" class="btn">
+                Avançar
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scripts/main.js"></script>
+</html>

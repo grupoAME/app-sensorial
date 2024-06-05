@@ -1,0 +1,12 @@
+[
+    {"quest":"Você consegue ver um objeto em destaque que parece mais próximo de você?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"Você consegue ver qual animal na Imagem?", "alt": ["Leão", "Cavalo", "Não Respondeu"]},
+    {"quest":"Qual forma geométrica a imagem se assemelha mais?    ", "alt": ["Círculo", "Quadrado", "Não Respondeu"]},
+    {"quest":"A imagem parece ter profundidade (como se alguns objetos estivessem mais distantes que outros)?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"Existe algum objeto na imagem que parece estar saindo da tela em direção a você?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"Todos os objetos na imagem estão na mesma cor (sem diferenciação de cores)?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"Você consegue ver alguma figura humana na imagem?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"Você consegue ver a imagem de um homem em movimento a na imagem?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"A imagem tem algum avião?", "alt": ["Sim", "Não", "Não Respondeu"]},
+    {"quest":"A imagem parece estar em movimento ou estática?", "alt": ["Estática", "Movimento", "Não Respondeu"]}
+]
