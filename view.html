@@ -5,18 +5,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
   <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
   <script src="scripts/tailwindconf.js"></script> 
     <style>
         .body{
+            width: 100%;
+            height: 100%;
             position: float;
-            margin: 0;
-            padding: 0;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden;
         }
         .container-btn-nav{
             background-color: #fff;
             width: 20%;
             height: 100%; 
             float: left;
+            margin-top: 25%;
         }
 
         #container-image{
@@ -103,6 +108,8 @@
             left: 0;
             width: 100% !important;
             height: 100% !important;
+            padding: 0 !important   ;
+            margin: 0 !important;
         }
 
         #view-question{
@@ -133,6 +140,7 @@
             background-color: rgba(255,255,255,0.5);
             float: left;
             margin-left: 20px;
+          
         }
 
         .btn-nav-img:hover{

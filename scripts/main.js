@@ -9,6 +9,7 @@ is_full = false;
 patient = 1;
 user = "luisaraujo.ifba@gmail.com";
 activenav();
+orientationcheck();
 
 $("#btn-next").click(function(){
     if(modal_active)
@@ -19,7 +20,7 @@ $("#btn-next").click(function(){
 
     $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
     update_question();
-    activenav()
+    activenav();
 });
 
 $("#btn-back").click(function(){
@@ -105,3 +106,20 @@ fetch('data/questions.json')
         questions_json = json;
         update_question();
     }() )
+
+$(window).on( "orientationchange", function( event ) {
+    orientationcheck()
+});
+
+function orientationcheck(){
+if(screen.availHeight > screen.availWidth){
+    is_full = true;
+    $("#main-image").addClass("full-image");
+    $("#container-image").addClass("full-image");
+}else{
+    is_full = false;
+    $("#main-image").removeClass("full-image");
+    $("#container-image").removeClass("full-image");
+}}
+
+    
