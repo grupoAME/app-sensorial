@@ -1,7 +1,7 @@
 $("#bt-start").click(function(){
  window.location = "view.html";
 });
-alert("ok")
+
 actual_quest = 1;
 modal_active = false;
 questions_json = null;
