@@ -17,6 +17,7 @@
             overflow: hidden;
         }
         .container-btn-nav{
+            z-index: 99;
             background-color: #fff;
             width: 20%;
             height: 100%; 
@@ -79,7 +80,7 @@
         }
 
         .container-btn-nav .btn{
-            
+          
             margin-top: 40%;
         }
         
@@ -129,18 +130,19 @@
         #nav-images{
             position: absolute;
             bottom: 10px;
-            width: 510px;
-            margin-left: calc(50% - 230px);
+            width: 60%;
+            margin-left: 20%;
             margin-right: auto;
         }
+
         .btn-nav-img{
-            width: 20px;
-            height: 20px;
+            width: 5%;
+            height: 0;
+            padding-bottom: 5%;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.5);
             float: left;
-            margin-left: 20px;
-          
+            margin-right: 5%;
         }
 
         .btn-nav-img:hover{
@@ -169,6 +171,20 @@
             width: 100%;
             height: 50px; 
         }
+
+        .tap{
+            width: 20%;
+            height: 100%;
+            position: absolute;
+            z-index: 98;
+        }
+        #tap-left{
+            left: 0px;
+        }
+
+        #tap-right{
+           right: 0px;
+        }
     </style>
 </head>
 
@@ -186,6 +202,13 @@
                 Ok
             </div>
         </div>
+    </div>
+    <div class="tap" id="tap-left">
+
+    </div>
+
+    <div class="tap" id="tap-right">
+
     </div>
 
     <div style="display: none;" id="main-container-finish">

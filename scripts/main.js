@@ -12,27 +12,20 @@ activenav();
 orientationcheck();
 
 $("#btn-next").click(function(){
-    if(modal_active)
-        return
-
-    if(actual_quest < 10)
-        actual_quest++;
-
-    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
-    update_question();
-    activenav();
+  nextQuestion();
 });
 
+$("#tap-right").click(function(){
+    nextQuestion();
+});
+
+
 $("#btn-back").click(function(){
-    if(modal_active)
-        return;
+    priorQuestion();
+});
 
-    if(actual_quest > 1)
-        actual_quest--;
-
-    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
-    update_question();
-    activenav();
+$("#tap-left").click(function(){
+    priorQuestion();
 });
 
 $(".btn-nav-img").click(function(){
@@ -121,5 +114,27 @@ if(screen.availHeight > screen.availWidth){
     $("#main-image").removeClass("full-image");
     $("#container-image").removeClass("full-image");
 }}
+function nextQuestion(){
+    if(modal_active)
+        return
 
-    
+    if(actual_quest < 10)
+        actual_quest++;
+
+    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
+    update_question();
+    activenav();
+}
+
+
+function priorQuestion(){
+    if(modal_active)
+        return;
+
+    if(actual_quest > 1)
+        actual_quest--;
+
+    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
+    update_question();
+    activenav();
+}
