@@ -85,17 +85,18 @@ $("#main-image").dblclick(function(){
 });
 
 function update_question(){
+
     $("#text-question").html(questions_json[actual_quest-1].quest);
-    $("#text-alt-1").html(questions_json[actual_quest-1].alt[0]);
-    $("#text-alt-2").html(questions_json[actual_quest-1].alt[1]);
-    $("#text-alt-3").html(questions_json[actual_quest-1].alt[2]);
-    $("input").prop( "checked", false );
+
+    $("#text-alt-1 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[0]);
+    $("#text-alt-2 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[1]);
+    $("#text-alt-3 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[2]);
+   // $("input").prop( "checked", false );
 };
 
 function activenav(){
     $(".btn-nav-img").removeClass('active');
     $(".btn-nav-img[ref='"+actual_quest+"']").addClass('active')
-    atQuestion();
 }
 
 
@@ -104,6 +105,7 @@ fetch('data/questions.json')
     .then((json) => function(){
         questions_json = json;
         atQuestion();
+        update_question()
     }() )
 
 $(window).on("orientationchange", function( event ) {

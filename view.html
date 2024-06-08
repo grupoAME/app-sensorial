@@ -3,11 +3,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sensorial3D App</title>
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  
   <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
-  <script src="scripts/jquery-3.7.1.min.js"></script>
-  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+  
+
   <script src="scripts/tailwindconf.js"></script> 
     <style>
         .body{
@@ -212,13 +216,13 @@
 <body class="body">
     <div id="modal-question">
         <div id="text-question">...</div>
-        <div class="options-question">
-            <input id="inp-alt-1" type="radio" id="html" name="inp_quest" value="1">
-            <label id="text-alt-1" for="inp-alt-1">Sim</label><br>
-            <input id="inp-alt-2" type="radio" id="css" name="inp_quest" value="2">
-            <label id="text-alt-2" for="inp-alt-2">Não</label><br>
+        <div id="options" class="options-question">
+           <input id="inp-alt-1" type="radio" id="html" name="inp_quest" value="1">
+           <label id="text-alt-1" for="inp-alt-1"></label><br>
+           <input id="inp-alt-2" type="radio" id="css" name="inp_quest" value="2">
+            <label id="text-alt-2" for="inp-alt-2"></label><br>
             <input id="inp-alt-3" type="radio"  name="inp_quest" value="3">
-            <label id="text-alt-3" for="inp-alt-3">Não Respondeu</label>
+            <label id="text-alt-3" for="inp-alt-3"></label>
             <div id='btn-confirm-question' class="mini-btn">
                 Ok
             </div>
