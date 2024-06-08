@@ -41,7 +41,7 @@ $(".btn-nav-img").click(function(){
 });
 
 $("#main-image").on("load",  function(){
-    $("#login-image").hide();
+   $("#load-image").hide();
 });
 
 $("#view-question").click(function(){
@@ -123,7 +123,7 @@ function nextQuestion(){
     if(actual_quest < 10)
         actual_quest++;
 
-    $("#loading-image").show();
+    $("#load-image").show();
     $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
     update_question();
     activenav();
