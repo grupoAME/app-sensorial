@@ -28,7 +28,8 @@
         #main-image{
             margin: auto;
             margin-top: 10px;
-           height: calc(100% - 20px);
+            height: 100%;
+            width:100%;
         }
 
         .container-question{
@@ -49,6 +50,14 @@
             margin-right: auto;
            
         }
+
+        .btn:hover{
+            background-color:  #060689;
+            color: #fff;
+            cursor: pointer;
+           
+        }
+
 
         .mini-btn{
             border:  2px solid #060689;
@@ -110,6 +119,48 @@
             cursor: pointer;
             opacity: 1;
         }
+        #nav-images{
+            position: absolute;
+            bottom: 10px;
+            width: 510px;
+            margin-left: calc(50% - 230px);
+            margin-right: auto;
+        }
+        .btn-nav-img{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            float: left;
+            margin-left: 20px;
+        }
+
+        .btn-nav-img:hover{
+            background-color: rgba(255,255,255,1);
+            cursor: pointer;
+        }
+
+        .btn-nav-img.active{
+            background-color: rgba(255,255,255,1);
+            cursor: pointer;
+        }
+
+        #container-image-finish{
+            margin-top: 50px;
+            width: 100%;
+            height: 170px;
+         
+        }
+        #container-image-finish img{
+            width: 300px;
+            height: 170px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #container-btn-finish{
+            width: 100%;
+            height: 50px; 
+        }
     </style>
 </head>
 
@@ -117,18 +168,34 @@
     <div id="modal-question">
         <div id="text-question">...</div>
         <div class="options-question">
-            <input id="inp-alt-1" type="radio" id="html" name="fav_language" value="1">
+            <input id="inp-alt-1" type="radio" id="html" name="inp_quest" value="1">
             <label id="text-alt-1" for="inp-alt-1">Sim</label><br>
-            <input id="inp-alt-2" type="radio" id="css" name="fav_language" value="2">
+            <input id="inp-alt-2" type="radio" id="css" name="inp_quest" value="2">
             <label id="text-alt-2" for="inp-alt-2">Não</label><br>
-            <input id="inp-alt-3" type="radio"  name="fav_language" value="3">
+            <input id="inp-alt-3" type="radio"  name="inp_quest" value="3">
             <label id="text-alt-3" for="inp-alt-3">Não Respondeu</label>
             <div id='btn-confirm-question' class="mini-btn">
                 Ok
             </div>
         </div>
     </div>
-    <div>
+
+    <div style="display: none;" id="main-container-finish">
+        <div id="container-image-finish">
+            <img src="images/3dglasses.png">
+        </div>
+        <div id="container-btn-finish">
+            <div id="btn-next" style="float: left; margin-right: 20px" class="btn">
+                Voltar
+            </div>
+
+            <div id="btn-next" style="float: left" class="btn">
+                Concluir
+            </div>
+        </div>
+    </div>
+         
+    <div id="main-container-questions">
         <div class="container-btn-nav">
             <div id="btn-back" class="btn">
                 Voltar
@@ -146,6 +213,20 @@
             </div>
         </div>
     </div>
+
+    <div id="nav-images">
+        <div ref='1' class="btn-nav-img"></div>
+        <div ref='2' class="btn-nav-img"></div>
+        <div ref='3' class="btn-nav-img"></div>
+        <div ref='4' class="btn-nav-img"></div>
+        <div ref='5' class="btn-nav-img"></div>
+        <div ref='6' class="btn-nav-img"></div>
+        <div ref='7' class="btn-nav-img"></div>
+        <div ref='8' class="btn-nav-img"></div>
+        <div ref='9' class="btn-nav-img"></div>
+        <div ref='10' class="btn-nav-img"></div>
+    </div>
 </body>
+<script src="scripts/data.js"></script>
 <script src="scripts/main.js"></script>
 </html>
