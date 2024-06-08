@@ -2,13 +2,13 @@ $("#bt-start").click(function(){
  window.location = "view.html";
 });
 
-actual_quest = 0;
+actual_quest = 1;
 modal_active = false;
 questions_json = null;
 is_full = false;
 patient = 1;
 user = "luisaraujo.ifba@gmail.com";
-activenav();
+
 orientationcheck();
 
 
@@ -34,10 +34,12 @@ $(".btn-nav-img").click(function(){
         return;
 
     actual_quest = $(this).attr("ref");
-
-    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
+    atQuestion();
+   /*
+   $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
     update_question();
     activenav();
+    */
 });
 
 $("#main-image").on("load",  function(){
@@ -93,7 +95,9 @@ function update_question(){
 function activenav(){
     $(".btn-nav-img").removeClass('active');
     $(".btn-nav-img[ref='"+actual_quest+"']").addClass('active')
+    atQuestion();
 }
+
 
 fetch('data/questions.json')
     .then((response) => response.json())
@@ -136,7 +140,18 @@ function priorQuestion(){
 
     if(actual_quest > 1)
         actual_quest--;
+    $("#load-image").show();
+    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
+    update_question();
+    activenav();
+}
 
+
+function atQuestion(){
+    if(modal_active)
+        return;
+
+    $("#load-image").show();
     $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
     update_question();
     activenav();
