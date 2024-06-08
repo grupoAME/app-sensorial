@@ -103,7 +103,7 @@ fetch('data/questions.json')
     .then((response) => response.json())
     .then((json) => function(){
         questions_json = json;
-        nextQuestion();
+        atQuestion();
     }() )
 
 $(window).on( "orientationchange", function( event ) {
