@@ -2,7 +2,7 @@ $("#bt-start").click(function(){
  window.location = "view.html";
 });
 
-actual_quest = 1;
+actual_quest = 0;
 modal_active = false;
 questions_json = null;
 is_full = false;
@@ -11,6 +11,7 @@ user = "luisaraujo.ifba@gmail.com";
 activenav();
 orientationcheck();
 
+
 $("#btn-next").click(function(){
   nextQuestion();
 });
@@ -18,7 +19,6 @@ $("#btn-next").click(function(){
 $("#tap-right").click(function(){
     nextQuestion();
 });
-
 
 $("#btn-back").click(function(){
     priorQuestion();
@@ -40,7 +40,9 @@ $(".btn-nav-img").click(function(){
     activenav();
 });
 
-
+$("#main-image").on("load",  function(){
+    $("#login-image").hide();
+});
 
 $("#view-question").click(function(){
   
@@ -97,7 +99,7 @@ fetch('data/questions.json')
     .then((response) => response.json())
     .then((json) => function(){
         questions_json = json;
-        update_question();
+        nextQuestion();
     }() )
 
 $(window).on( "orientationchange", function( event ) {
@@ -121,6 +123,7 @@ function nextQuestion(){
     if(actual_quest < 10)
         actual_quest++;
 
+    $("#loading-image").show();
     $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
     update_question();
     activenav();

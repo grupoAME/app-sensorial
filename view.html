@@ -2,6 +2,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensorial3D App</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
   <script src="scripts/jquery-3.7.1.min.js"></script>
@@ -36,6 +38,22 @@
             margin-top: 10px;
             height: 100%;
             width:100%;
+        }
+        
+        #login-image{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 90;
+            background-color: #fff;
+        }
+
+
+        #login-image img{
+            margin: auto;
+            margin-top: 50%;
+            width: 300px;
+           
         }
 
         .container-question{
@@ -177,6 +195,7 @@
             height: 100%;
             position: absolute;
             z-index: 98;
+           /* background-color:rgba(0,0,0,0.4);*/
         }
         #tap-left{
             left: 0px;
@@ -225,7 +244,9 @@
             </div>
         </div>
     </div>
-         
+    <div id="login-image" >
+        <img src="images/sys/loading2.gif">
+    </div>
     <div id="main-container-questions">
         <div class="container-btn-nav">
             <div id="btn-back" class="btn">
@@ -236,7 +257,8 @@
             <div id="view-question">
                 <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
             </div>
-            <img id="main-image" src="images/imagem1.png">
+            
+            <img id="main-image" src="images/imagem1.png"> 
         </div>
         <div class="container-btn-nav">
             <div id="btn-next" class="btn">
