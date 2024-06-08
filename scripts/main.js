@@ -106,8 +106,10 @@ fetch('data/questions.json')
         atQuestion();
     }() )
 
-$(window).on( "orientationchange", function( event ) {
-    orientationcheck()
+$(window).on("orientationchange", function( event ) {
+    alert("ok")
+    orientationcheck();
+    event.preventDefault();
 });
 
 function orientationcheck(){
