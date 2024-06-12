@@ -1,6 +1,3 @@
-$("#bt-start").click(function(){
- window.location = "view.html";
-});
 
 actual_quest = 1;
 modal_active = false;
