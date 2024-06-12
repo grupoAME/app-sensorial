@@ -91,7 +91,7 @@ function update_question(){
     $("#text-alt-1 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[0]);
     $("#text-alt-2 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[1]);
     $("#text-alt-3 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[2]);
-   // $("input").prop( "checked", false );
+
 };
 
 function activenav(){
@@ -105,11 +105,10 @@ fetch('data/questions.json')
     .then((json) => function(){
         questions_json = json;
         atQuestion();
-        update_question()
     }() )
 
 $(window).on("orientationchange", function( event ) {
-    alert("ok")
+   //alert("ok")
     orientationcheck();
     event.preventDefault();
 });
