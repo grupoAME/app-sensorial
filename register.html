@@ -1,0 +1,55 @@
+<html class="h-full bg-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/tailwindconf.js"></script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="flex flex-col items-center justify-center  px-10">
+    <div class="mt-10 text-2xl text-blue-900 font-bold">Registro</div>
+    
+    <div id="alert-register" class="text-xs text-red-500"></div>
+</div>
+
+    <div class="w-full h-full">
+
+    <input type="text" id="inp-name" class="mt-5 w-full bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nome" required />
+  
+    <input type="text" id="inp-email" class="mt-5 w-full bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="E-mail" required />
+    
+    <input type="text" id="inp-email2" class="mt-5 w-full bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Confirme o E-mail" required />
+  
+    <input type="text" id="inp-phone" class="mt-5 w-full bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Telefone" required />
+  
+    <input type="text" id="inp-area" class="mt-5 w-full bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Área" required />
+  
+    <input type="text" id="inp-city" class="mt-5 bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Cidade" required />
+    
+    <select id="inp-state" class="block py-2.5 px-0 w-full text-sm text-blue-900 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+        <option selected>Estado</option>
+        <option value="1">Bahia</option>
+        <option value="2">Sergipe</option>
+        <option value="3">Minas Gerais</option>
+        <option value="4">Maranhão</option>
+    </select>
+
+    <input type="password" id="inp-password" class="mt-5 bg-gray-50 border border-blue-900 text-blue-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Cidade" required />
+    
+    <button id="bt-register" class="mt-2 mb-20 bg-transparent hover:bg-blue-900 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded  md:text-2xl">Registrar</button>
+   
+  
+
+    <footer class="h-10 w-full text-center aling-center justify-center items-center fixed bottom-0 dark:bg-gray-900">
+        <div class="w-full px-1 py-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+            <span class="w-full text-xs text-gray-500 dark:text-gray-300 text-center">© 2024  MPV App Sensorial - Desenvolvido pelo Grupo AME.
+            </span>
+        </div>
+    </footer>
+
+</body>
+<script src="scripts/register.js"></script>
+</html>
