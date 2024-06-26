@@ -5,6 +5,12 @@ $("#bt-start").click(function(){
         showAlert("Preencha corretamente os campus!");
 });
 
+
+$("#bt-register").click(function(){
+    window.location = "register.html";
+});
+
+
 function login(email,password, callback){
     $.post("backend/login.php", 
       {email:email, password:password},

@@ -1,9 +1,11 @@
 
 actual_quest = 1;
+next_freequestion = 1;
 modal_active = false;
 questions_json = null;
 is_full = false;
 patient = 1;
+
 user = "luisaraujo.ifba@gmail.com";
 
 orientationcheck();
@@ -44,13 +46,14 @@ $("#main-image").on("load",  function(){
 });
 
 $("#view-question").click(function(){
-  
+    $("#view-question").removeClass("view-question-error");
     if(!modal_active){
         showModalQuestion();
     }
 });
 
 function showModalQuestion(){
+    update_question();
     $("#modal-question").show();
     modal_active = true;
     if(questions_json[actual_quest].opt != undefined){
@@ -66,6 +69,7 @@ $("#btn-confirm-question").click(function(){
     if(quest_value != undefined)
         sendQuestion(user,patient,actual_quest, quest_value, function(){
             questions_json[actual_quest].opt = quest_value;
+            freeNextQuestion();
         } );
 });
 
@@ -82,12 +86,18 @@ $("#main-image").dblclick(function(){
 });
 
 function update_question(){
-
+    console.log(questions_json[actual_quest-1])
     $("#text-question").html(questions_json[actual_quest-1].quest);
+    
+    console.log( $("#text-alt-1 .ui-checkboxradio-icon-space") );
 
     $("#text-alt-1 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[0]);
     $("#text-alt-2 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[1]);
     $("#text-alt-3 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[2]);
+    
+    $("#text-alt-1").removeClass("ui-checkboxradio-checked ui-state-active");
+    $("#text-alt-2").removeClass("ui-checkboxradio-checked ui-state-active");
+    $("#text-alt-3").removeClass("ui-checkboxradio-checked ui-state-active");
 
 };
 
@@ -122,7 +132,12 @@ if(screen.availHeight > screen.availWidth){
 }}
 function nextQuestion(){
     if(modal_active)
-        return
+        return;
+    if(next_freequestion <= actual_quest){
+        $("#view-question").addClass("view-question-error");
+        return;
+    }
+       
 
     if(actual_quest < 10)
         actual_quest++;
@@ -146,6 +161,9 @@ function priorQuestion(){
     activenav();
 }
 
+function freeNextQuestion(){
+    next_freequestion++;
+}
 
 function atQuestion(){
     if(modal_active)
@@ -153,6 +171,7 @@ function atQuestion(){
 
     $("#load-image").show();
     $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
+    console.log(actual_quest)
     update_question();
     activenav();
 }

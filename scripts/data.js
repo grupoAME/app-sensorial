@@ -55,3 +55,16 @@ function getpatient(email){
       }
   }); 
 }
+
+function getListPatient(callback){
+  $.post("backend/getlistpatient.php", 
+    function(result){  
+      result = JSON.parse(result);
+      if(result.status == 'sucess')
+         callback(result.data);
+      else{
+          //TODO
+          console.log(result);
+      }
+  }); 
+}

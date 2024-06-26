@@ -4,7 +4,7 @@ include("connect.php");
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-$sql = "SELECT id FROM Profissional WHERE email= '$email' AND password = '$password' ";
+$sql = "SELECT id FROM Professional WHERE email= '$email' AND password = '$password' ";
 
 $result = $mysqli->query($sql);
 $row = $result -> fetch_assoc();

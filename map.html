@@ -1,0 +1,135 @@
+<html class="h-full bg-white">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'>
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/tailwindconf.js"></script> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.container-graph{
+    height: 240px;
+}
+.container-line-graph{
+    border: 1px solid #aaa;
+    border-top: none;
+    height: 100px;
+    width: 100%;
+}
+
+.line-graph{
+    border-top: 1px  solid #aaa;
+    float:left;
+    width: 100%;
+    height: 25%;
+}
+
+.container-line-graph:first-child{
+    border-top: none !important;
+}
+
+.bar-graph{
+    width: 20px;
+    background-color: rgb(29, 29, 110);
+    font-size: 7px;
+    color: #fff;
+    text-align: center;
+}
+.bar-graph-date{
+    font-size: 10px;
+    width: 50px;
+}
+.container-bar-graph{
+    position: relative;
+    top: -100px;
+    margin-left: 10px;
+    float: left;
+}
+</style>
+
+</head>
+
+<body class="flex flex-col items-center justify-center  px-10">
+    <div class="mt-10 text-2xl text-blue-900 font-bold">Todas Sessões</div>
+    
+    <div id="alert-register" class="text-xs text-red-500"></div>
+</div>    
+
+    <div id="container-list-user" class="w-full mb-20">
+       
+       <!-- <div class="container-graph">
+            <div class="patient-name"> Ana Souza</div>
+            
+            <div class="container-line-graph">
+                <div class="line-graph"></div>
+                <div class="line-graph"></div>
+                <div class="line-graph"></div>
+                <div class="line-graph"></div>
+            </div>
+            <div class="container-bar-graph">
+                <div style="height: 100px;" class="bar-graph">
+                </div>
+                <span class="bar-graph-date">20/20/2000</span>
+            </div>
+
+            <div class="container-bar-graph">
+                <div  style="height: 50px; margin-top: 50px" class="bar-graph">
+                </div>
+                <span class="bar-graph-date">20/20/2000</span>
+            </div>
+
+            <div class="container-bar-graph">
+                <div  style="height: 70px; margin-top: 30px" class="bar-graph">
+                </div>
+                <span class="bar-graph-date">20/20/2000</span>
+            </div>
+
+        </div> -->
+
+        <div class="container-graph">
+            <div class="patient-name">  <i class="fa fa-chevron-circle-down ml-5" aria-hidden="true"></i> Ana Souza </div>
+            
+            <div class="container-line-graph">
+                <div class="line-graph"></div>
+                <div class="line-graph"></div>
+                <div class="line-graph"></div>
+                <div class="line-graph"></div>
+            </div>
+            <div id="graph-patient-1"></div>
+           <!--<div class="container-bar-graph">
+                <div style="height: 100px;" class="bar-graph">
+                    100%
+                </div>
+                <span class="bar-graph-date">20/20/2000</span>
+            </div>
+
+            <div class="container-bar-graph">
+                <div  style="height: 50px; margin-top: 50px" class="bar-graph">
+                    50%
+                </div>
+                <span class="bar-graph-date">20/20/2000</span>
+            </div>
+
+            <div class="container-bar-graph">
+                <div  style="height: 70px; margin-top: 30px" class="bar-graph">
+                </div>
+                <span class="bar-graph-date">20/20/2000</span>
+            </div>-->
+
+        </div>
+
+    </div>
+
+    <footer class="h-10 w-full text-center aling-center justify-center items-center fixed bottom-0 dark:bg-gray-900">
+        <div class="w-full px-1 py-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+            <span class="w-full text-xs text-gray-500 dark:text-gray-300 text-center">© 2024  MPV App Sensorial - Desenvolvido pelo Grupo AME.
+            </span>
+        </div>
+    </footer>
+
+</body>
+<script src="scripts/data.js"></script>
+<script src="scripts/map.js"></script
+</html>
