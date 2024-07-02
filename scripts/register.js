@@ -17,7 +17,7 @@ $("#bt-register").click(function(){
     );
 });
 
-function register(nome, email,phone,password, area, city, state, callback){
+function register(nome, email,phone, area, city, state, password, callback){
   $.post("backend/register.php", 
     {nome:nome, email:email, password:password, phone:phone, area:area, city:city, state:state},
     function(result){  

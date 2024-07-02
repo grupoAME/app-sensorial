@@ -10,16 +10,18 @@ $("#bt-register").click(function(){
     window.location = "register.html";
 });
 
+//has session?
+getUserSession(redirectToList, function(){});
 
 function login(email,password, callback){
     $.post("backend/login.php", 
       {email:email, password:password},
       function(result){  
-        console.log(result);
+        //console.log(result);
         result = JSON.parse(result);
-        if(result.status == 'sucess')
-            window.location = "list.html";
-        else{
+        if(result.status == 'sucess'){
+            setUserSession(result.data, redirectToList);
+        }else{
             //TODO
             showAlert("Dados inválidos! Verifique suas credenciais.");
         }
@@ -31,4 +33,8 @@ function login(email,password, callback){
     $("#alert-login").html(msg);
     $("#alert-login").show();
     
+  }
+
+  function redirectToList(){
+    window.location = "list.html";
   }

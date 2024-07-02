@@ -4,7 +4,7 @@ next_freequestion = 1;
 modal_active = false;
 questions_json = null;
 is_full = false;
-patient = 1;
+
 
 user = "luisaraujo.ifba@gmail.com";
 
@@ -26,6 +26,10 @@ $("#btn-back").click(function(){
 $("#tap-left").click(function(){
     priorQuestion();
 });
+
+$("#bt-back").click(function(){
+    redirectToList();
+})
 
 $(".btn-nav-img").click(function(){
 
@@ -56,8 +60,8 @@ function showModalQuestion(){
     update_question();
     $("#modal-question").show();
     modal_active = true;
-    if(questions_json[actual_quest].opt != undefined){
-        $("#inp-alt-"+questions_json[actual_quest].opt).prop("checked", true); 
+    if(questions_json[actual_quest-1].opt != undefined){
+        $("#inp-alt-"+questions_json[actual_quest-1].opt).prop("checked", true); 
     }
 }
 
@@ -67,8 +71,8 @@ $("#btn-confirm-question").click(function(){
     modal_active = false;
     var quest_value = $("input[name='inp_quest']:checked").val();
     if(quest_value != undefined)
-        sendQuestion(user,patient,actual_quest, quest_value, function(){
-            questions_json[actual_quest].opt = quest_value;
+        sendQuestion(user,actual_quest, quest_value, function(){
+            questions_json[actual_quest-1].opt = quest_value;
             freeNextQuestion();
         } );
 });
@@ -130,6 +134,7 @@ if(screen.availHeight > screen.availWidth){
     $("#main-image").removeClass("full-image");
     $("#container-image").removeClass("full-image");
 }}
+
 function nextQuestion(){
     if(modal_active)
         return;
@@ -139,13 +144,17 @@ function nextQuestion(){
     }
        
 
-    if(actual_quest < 10)
+    if(actual_quest < 10){
         actual_quest++;
+        $("#load-image").show();
+        $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
+        update_question();
+        activenav();
 
-    $("#load-image").show();
-    $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
-    update_question();
-    activenav();
+    }else{
+        $("#main-container-questions").addClass("hidden");
+        $("#container-back").removeClass("hidden");
+    }
 }
 
 
@@ -168,6 +177,11 @@ function freeNextQuestion(){
 function atQuestion(){
     if(modal_active)
         return;
+    
+    if(next_freequestion <= actual_quest){
+        $("#view-question").addClass("view-question-error");
+        return;
+    }
 
     $("#load-image").show();
     $("#main-image").attr("src", "images/imagem"+actual_quest+".png");
@@ -175,3 +189,9 @@ function atQuestion(){
     update_question();
     activenav();
 }
+
+function redirectToList(){
+    window.location = "list.html";
+}
+
+getPatientSession( function(){}, redirectToList);

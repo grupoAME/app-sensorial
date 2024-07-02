@@ -1,6 +1,6 @@
-function sendQuestion(email,patient,number, quest_value, callback){
+function sendQuestion(email,number, quest_value, callback){
   $.post("backend/sendquestion.php", 
-    {email:email, patient:patient,number:number, quest_value:quest_value},
+    {email:email,number:number, quest_value:quest_value},
     function(result){  
       console.log(result);
       result = JSON.parse(result);
@@ -59,6 +59,21 @@ function getpatient(email){
 function getListPatient(callback){
   $.post("backend/getlistpatient.php", 
     function(result){  
+      console.log(result);
+      result = JSON.parse(result);
+      if(result.status == 'sucess')
+         callback(result.data);
+      else{
+          //TODO
+          console.log(result);
+      }
+  }); 
+}
+
+function getNameProfessional(callback){
+  $.post("backend/getnameprofessional.php", 
+    function(result){  
+      console.log(result);
       result = JSON.parse(result);
       if(result.status == 'sucess')
          callback(result.data);

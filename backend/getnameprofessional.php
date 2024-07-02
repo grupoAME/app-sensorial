@@ -7,17 +7,14 @@ $professional_id = getuser_session()['data'];
 $arr_return = [];
 $arr_return['status'] = 'error';
 
-$sql = "SELECT * FROM Patient  WHERE professional_id = ".$professional_id;
+$sql = "SELECT name FROM Professional  WHERE id = ".$professional_id;
 
 $result = $mysqli->query($sql);
 
 if($result){
     $arr_return['status'] = 'sucess';
-    $arr_return['data'] = [];
+    $arr_return['data'] = $result -> fetch_assoc();
         
-    while($row = $result -> fetch_assoc()){    
-        array_push( $arr_return['data'], $row );
-    }
 }
 
 echo json_encode($arr_return);   

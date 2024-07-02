@@ -11,6 +11,7 @@ $row = $result -> fetch_assoc();
 
 if($row != null){
     $arr_return['status'] = 'sucess';
+    $arr_return['data'] = $row['id'];
 }  
 else 
     $arr_return['status'] = 'error';

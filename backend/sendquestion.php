@@ -1,11 +1,12 @@
 <?php
 include("connect.php");
+include("session.php");
 
 $number = $_POST["number"];
-$patient = $_POST["patient"];
+$patient = getpatient_session()['data'];
 $quest_value = $_POST["quest_value"];
 //todo
-$professional_id = 1;
+$professional_id = getuser_session()['data'];
 
 $sql = "SELECT id FROM question WHERE professional_id= '$professional_id' AND patient_id = '$patient' AND number = '$number' AND  date = CURDATE() ";
 

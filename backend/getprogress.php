@@ -1,6 +1,6 @@
 <?php
 include("connect.php");
-
+include("session.php");
 
 $patient = $_POST["patient"];
 //todo
@@ -31,7 +31,7 @@ foreach ($array_date as &$date) {
     $qtd_correct = 0;
     while($row = $result -> fetch_assoc()){
 
-        if($row['value'] == $array_tamplete[ $row['number'] ])
+        if($row['value'] == $array_tamplete[ intval($row['number'])-1 ])
             $qtd_correct++;
 
     } 

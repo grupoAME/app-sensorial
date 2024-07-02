@@ -1,10 +1,11 @@
 <?php
 include("connect.php");
+include("session.php");
 
 $nome  = $_POST["nome"];
 $bday = $_POST["bday"];
 //todo
-$professional_id = 1;
+$professional_id = getuser_session()['data'];
 
 $sql = "SELECT id FROM patient WHERE name='$nome' and bday= '$bday' ";
 

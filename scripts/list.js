@@ -1,23 +1,35 @@
+
+
+
 $("#bt-register").click(function(){
-if($("#inp-name").val() == "" || $("#inp-email").val() == "" || $("#inp-email2").val() == "" ||
-$("#inp-phone").val() == "" || $("#inp-area").val() == "" || $("#inp-city").val() == "" || 
-$("#inp-state").val() == "" || $("#inp-password").val()== ""){
-    showAlert("Preencha os campus corretamente.");
-}else
-    register_patient(
-        $("#inp-name").val(),
-        $("#inp-data").val()
-    );
+    if($("#inp-name").val() == "" || $("#inp-email").val() == "" || $("#inp-email2").val() == "" ||
+    $("#inp-phone").val() == "" || $("#inp-area").val() == "" || $("#inp-city").val() == "" || 
+    $("#inp-state").val() == "" || $("#inp-password").val()== ""){
+        showAlert("Preencha os campus corretamente.");
+    }else
+        register_patient(
+            $("#inp-name").val(),
+            $("#inp-data").val()
+        );
 });
 
+
+$("#sign-out").click(function(){
+    singOut( redirectToIndex );
+});
+
+function showNameProfessional(){
+    getNameProfessional( function(data){
+        console.log(data)
+        $("#name-professional").html(data.name);
+    });
+}
 
 
 function showAlert(msg){
     $("#alert-login").html(msg);
     $("#alert-login").show();  
 }
-
-
 
 function showListPatient(){
 
@@ -33,7 +45,8 @@ function showListPatient(){
         });
 
         $(".item-list-user").click(function(){
-            window.location = "view.html?id="+$(this).attr("ref");
+            setPatientSession($(this).attr("ref"), redirectToView);
+           
         });
 
     });   
@@ -47,7 +60,7 @@ function register_patient(nome, bday){
           result = JSON.parse(result);
           if(result.status == 'sucess')
                 showListPatient();
-          if(result.status == 'already-rec'){
+          else if(result.status == 'already-rec'){
             showAlert("Esse paciente já possui cadastro!");
           } else{
               //TODO
@@ -56,6 +69,14 @@ function register_patient(nome, bday){
       }); 
 }
 
+function redirectToView(){
+    window.location = "view.html";
+}
 
-showListPatient();
+function redirectToIndex(){
+    window.location = "index.html";
+}
 
+
+
+getUserSession( function(){ showListPatient(); showNameProfessional();}, redirectToIndex);
