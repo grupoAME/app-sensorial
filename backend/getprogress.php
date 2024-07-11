@@ -3,6 +3,7 @@ include("connect.php");
 include("session.php");
 
 $patient = $_POST["patient"];
+
 //todo
 $professional_id = 1;
 $arr_return = [];

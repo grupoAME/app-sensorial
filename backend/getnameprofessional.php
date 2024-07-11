@@ -7,7 +7,7 @@ $professional_id = getuser_session()['data'];
 $arr_return = [];
 $arr_return['status'] = 'error';
 
-$sql = "SELECT name FROM Professional  WHERE id = ".$professional_id;
+$sql = "SELECT name FROM professional  WHERE id = ".$professional_id;
 
 $result = $mysqli->query($sql);
 
@@ -18,3 +18,5 @@ if($result){
 }
 
 echo json_encode($arr_return);   
+
+

@@ -31,6 +31,11 @@ $("#bt-back").click(function(){
     redirectToList();
 })
 
+$("#bt-see-graph").click(function(){
+    redirectToSingleMap();
+})
+
+
 $(".btn-nav-img").click(function(){
 
     if(modal_active)
@@ -90,18 +95,25 @@ $("#main-image").dblclick(function(){
 });
 
 function update_question(){
+  
     console.log(questions_json[actual_quest-1])
     $("#text-question").html(questions_json[actual_quest-1].quest);
-    
-    console.log( $("#text-alt-1 .ui-checkboxradio-icon-space") );
+   
 
-    $("#text-alt-1 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[0]);
-    $("#text-alt-2 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[1]);
-    $("#text-alt-3 .ui-checkboxradio-icon-space").html(questions_json[actual_quest-1].alt[2]);
+    var inputs = '<input id="inp-alt-1" type="radio"  name="inp_quest" value="1" class="ui-checkboxradio ui-helper-hidden-accessible">'+
+                '<label id="text-alt-1" for="inp-alt-1" class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label ui-button-inherit"><span class="ui-checkboxradio-icon ui-corner-all ui-icon ui-icon-background ui-icon-blank"></span><span class="ui-checkboxradio-icon-space"> </span>'+questions_json[actual_quest-1].alt[0]+'</label>'+
+                '<input id="inp-alt-2" type="radio"  name="inp_quest" value="2" class="ui-checkboxradio ui-helper-hidden-accessible">'+
+                '<label id="text-alt-2" for="inp-alt-2" class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label ui-button-inherit"><span class="ui-checkboxradio-icon ui-corner-all ui-icon ui-icon-background ui-icon-blank"></span><span class="ui-checkboxradio-icon-space"> </span>'+questions_json[actual_quest-1].alt[1]+'</label>'+
+                '<input id="inp-alt-3" type="radio"  name="inp_quest" value="3" class="ui-checkboxradio ui-helper-hidden-accessible">'+
+                '<label id="text-alt-3" for="inp-alt-3" class="ui-checkboxradio-label ui-corner-all ui-button ui-widget ui-checkboxradio-radio-label ui-button-inherit"><span class="ui-checkboxradio-icon ui-corner-all ui-icon ui-icon-background ui-icon-blank"></span><span class="ui-checkboxradio-icon-space"> </span>'+questions_json[actual_quest-1].alt[2]+'</label>';
     
-    $("#text-alt-1").removeClass("ui-checkboxradio-checked ui-state-active");
-    $("#text-alt-2").removeClass("ui-checkboxradio-checked ui-state-active");
-    $("#text-alt-3").removeClass("ui-checkboxradio-checked ui-state-active");
+    $("#container-options").html(inputs);
+
+    $(".ui-checkboxradio-label").click(function(){
+        $(".ui-checkboxradio-label").removeClass("ui-checkboxradio-checked ui-state-active");
+        $(this).addClass("ui-checkboxradio-checked ui-state-active");
+        //console.log("ok")
+    });
 
 };
 
@@ -115,7 +127,7 @@ fetch('data/questions.json')
     .then((response) => response.json())
     .then((json) => function(){
         questions_json = json;
-        atQuestion();
+        getPatientSession( atQuestion, redirectToList);
     }() )
 
 $(window).on("orientationchange", function( event ) {
@@ -125,15 +137,16 @@ $(window).on("orientationchange", function( event ) {
 });
 
 function orientationcheck(){
-if(screen.availHeight > screen.availWidth){
-    is_full = true;
-    $("#main-image").addClass("full-image");
-    $("#container-image").addClass("full-image");
-}else{
-    is_full = false;
-    $("#main-image").removeClass("full-image");
-    $("#container-image").removeClass("full-image");
-}}
+    if(screen.availHeight > screen.availWidth){
+        is_full = true;
+        $("#main-image").addClass("full-image");
+        $("#container-image").addClass("full-image");
+    }else{
+        is_full = false;
+        $("#main-image").removeClass("full-image");
+        $("#container-image").removeClass("full-image");
+    }
+}
 
 function nextQuestion(){
     if(modal_active)
@@ -178,7 +191,7 @@ function atQuestion(){
     if(modal_active)
         return;
     
-    if(next_freequestion <= actual_quest){
+    if(next_freequestion < actual_quest){
         $("#view-question").addClass("view-question-error");
         return;
     }
@@ -194,4 +207,6 @@ function redirectToList(){
     window.location = "list.html";
 }
 
-getPatientSession( function(){}, redirectToList);
+function redirectToSingleMap(){
+    window.location = "singlemap.html";
+}

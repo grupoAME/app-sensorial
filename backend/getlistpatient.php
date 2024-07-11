@@ -7,7 +7,7 @@ $professional_id = getuser_session()['data'];
 $arr_return = [];
 $arr_return['status'] = 'error';
 
-$sql = "SELECT * FROM Patient  WHERE professional_id = ".$professional_id;
+$sql = "SELECT * FROM patient  WHERE professional_id = ".$professional_id;
 
 $result = $mysqli->query($sql);
 

@@ -1,6 +1,3 @@
-
-
-
 $("#bt-register").click(function(){
     if($("#inp-name").val() == "" || $("#inp-email").val() == "" || $("#inp-email2").val() == "" ||
     $("#inp-phone").val() == "" || $("#inp-area").val() == "" || $("#inp-city").val() == "" || 
@@ -17,6 +14,10 @@ $("#bt-register").click(function(){
 $("#sign-out").click(function(){
     singOut( redirectToIndex );
 });
+
+$("#bt-view-map").click(function(){
+    redirectToMap();
+})
 
 function showNameProfessional(){
     getNameProfessional( function(data){
@@ -77,6 +78,9 @@ function redirectToIndex(){
     window.location = "index.html";
 }
 
+function redirectToMap(){
+    window.location = "map.html";
+}
 
 
 getUserSession( function(){ showListPatient(); showNameProfessional();}, redirectToIndex);

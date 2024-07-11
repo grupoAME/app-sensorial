@@ -56,6 +56,20 @@ function getpatient(email){
   }); 
 }
 
+function getCurrentPatient(callback){
+  $.post("backend/getcurrentpatient.php", 
+    function(result){  
+      console.log(result);
+      result = JSON.parse(result);
+      if(result.status == 'sucess')
+         callback(result.data);
+      else{
+          //TODO
+          console.log(result);
+      }
+  }); 
+}
+
 function getListPatient(callback){
   $.post("backend/getlistpatient.php", 
     function(result){  

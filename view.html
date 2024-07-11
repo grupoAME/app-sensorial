@@ -224,12 +224,14 @@
     <div id="modal-question">
         <div id="text-question">...</div>
         <div id="options" class="options-question">
-           <input id="inp-alt-1" type="radio" id="html" name="inp_quest" value="1">
-           <label id="text-alt-1" for="inp-alt-1"></label><br>
-           <input id="inp-alt-2" type="radio" id="css" name="inp_quest" value="2">
-            <label id="text-alt-2" for="inp-alt-2"></label><br>
-            <input id="inp-alt-3" type="radio"  name="inp_quest" value="3">
-            <label id="text-alt-3" for="inp-alt-3"></label>
+           <div id="container-options">
+                <input id="inp-alt-1" type="radio" id="html" name="inp_quest" value="1">
+                <label id="text-alt-1" for="inp-alt-1">teste</label>
+                <input id="inp-alt-2" type="radio" id="css" name="inp_quest" value="2">
+                <label id="text-alt-2" for="inp-alt-2"></label> 
+                <input id="inp-alt-3" type="radio"  name="inp_quest" value="3">
+                <label id="text-alt-3" for="inp-alt-3"></label>
+            </div>
             <div id='btn-confirm-question' class="mini-btn">
                 Ok
             </div>
@@ -262,13 +264,13 @@
         <img src="images/sys/loading2.gif">
     </div>
     
-    <div  id="main-container-questions">
+    <div id="main-container-questions">
         <div class="container-btn-nav">
             <div id="btn-back" class="btn">
                 Voltar
             </div>
         </div>
-        <div id="container-image"  >
+        <div  id="container-image"  >
             <div id="view-question">
                 <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
             </div>
@@ -294,12 +296,11 @@
         <div ref='9' class="btn-nav-img"></div>
         <div ref='10' class="btn-nav-img"></div>
     </div>
-    <div id="container-back" class="hidden text-align text-center m-20 tex-bold text-3xl">
+    <div id="container-back" class="hidden text-align text-center items-center m-20 tex-bold text-3xl">
         <img class="animate-pulse mt-52 w-80 sm:w-44 sm:mt-0 md:w-56 lg:w-80 lg:mt-20 xl:w-auto" src="images/congrats.png">
         <div class="mt-10">Chegamos ao final da sessão!</div>
+        <div id="bt-see-graph" class="mt-2 bg-blue-900 text-white font-semibold py-2 px-4 border border-blue-900 hover:border-transparent rounded  text-xl">Ver Gráfico</div>
         <button id="bt-back" class="mt-2 bg-transparent hover:bg-blue-900 text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-900 hover:border-transparent rounded  md:text-2xl">Voltar</button>
-   
-     
     </div>
 </body>
 <script src="scripts/session.js"></script>
