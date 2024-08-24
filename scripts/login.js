@@ -20,7 +20,7 @@ function login(email,password, callback){
         //console.log(result);
         result = JSON.parse(result);
         if(result.status == 'sucess'){
-            setUserSession(result.data, redirectToList);
+            setUserSession(result.data, redirectToMenu);
         }else{
             //TODO
             showAlert("Dados inválidos! Verifique suas credenciais.");
@@ -36,5 +36,9 @@ function login(email,password, callback){
   }
 
   function redirectToList(){
+    window.location = "list.html";
+  }
+
+  function redirectToMenu(){
     window.location = "list.html";
   }

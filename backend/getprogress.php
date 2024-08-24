@@ -32,7 +32,7 @@ foreach ($array_date as &$date) {
     $qtd_correct = 0;
     while($row = $result -> fetch_assoc()){
 
-        if($row['value'] == $array_tamplete[ intval($row['number'])-1 ])
+        if($row['value'] == $array_tamplete[ intval($row['number']) ])
             $qtd_correct++;
 
     } 
